@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
-const Schema   = mongoose.Schema;
-ObjectId       = Schema.ObjectId; 
 
-const dataschema = new mongoose.Schema({
-  name: { type: String },
-  team: { type: ObjectId},
-  user: { type: ObjectId}
+const dataSchema = new mongoose.Schema({ 
+    team: { type: String, required: true },
+    created_at:{type: Date, default: Date.now()}
 });
 
-module.exports = mongoose.model("task", dataschema);
+module.exports = mongoose.model("task", dataSchema);
